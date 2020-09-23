@@ -82,7 +82,7 @@ struct ForfeitBrain {
         let time = self.getTime()
         
         
-    }
+    } //Toad
     
     
 }
