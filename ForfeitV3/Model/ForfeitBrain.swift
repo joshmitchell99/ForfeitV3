@@ -38,6 +38,7 @@ struct ForfeitBrain {
         print("Saving items")
         let encoder = PropertyListEncoder()
         
+        loadItems()
         self.itemArray.append(item)
         
         do {
