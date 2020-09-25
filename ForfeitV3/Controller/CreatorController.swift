@@ -10,6 +10,8 @@ import UIKit
 
 class CreatorController: UIViewController {
     
+    var tableController = TableController()
+    
     let dateFormatter = DateFormatter()
     var brain = ForfeitBrain()
     
@@ -43,15 +45,12 @@ class CreatorController: UIViewController {
             textEntry.placeholder = "Put something in here!"
             return
         }
-        submit()
-        navigationController?.popToRootViewController(animated: true)
-    }
-    
-    func submit() {
+        
         let forfeitTitle = textEntry.text!
         let completeBy = dateFormatter.string(from: datePicker.date)
         let forfeitAmount = Int(forfeitAmountStepper.value)
-        
         brain.addForfeit(title: forfeitTitle, date: completeBy, amount: forfeitAmount)
+        
+        navigationController?.popToRootViewController(animated: true)
     }
 }

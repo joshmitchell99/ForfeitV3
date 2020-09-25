@@ -10,6 +10,8 @@ import Foundation
 
 struct ForfeitBrain {
     
+    // Can try this: https://cocoacasts.com/how-to-add-pull-to-refresh-to-a-table-view-or-collection-view
+        
     // Create a new array of item objects created from the item class
     var itemArray = [Item]()
     
@@ -27,11 +29,8 @@ struct ForfeitBrain {
         newItem.title = title
         newItem.date = date
         newItem.amount = amount
-        //self.itemArray.append(newItem)
         
         self.saveItem(item: newItem)
-        let tableController = TableController()
-        tableController.viewDidLoad()
     }
     
     mutating func saveItem(item: Item) {
@@ -61,6 +60,7 @@ struct ForfeitBrain {
                 print("Error decoding item array, \(error)")
             }
         }
+        
     }
     
     //MARK: - Submitting evidence
